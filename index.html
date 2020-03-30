@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<meta charset="UTF-8">
+		<title>Simulação</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="src/index.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"></script>
+		
+		<style>
+			input[type="text"] {width: 50px;}
+			th{font-weight: normal;}
+			.resultado-3 td{text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="entrada">
+			
+				<div>
+					<label>Tempo a ser simulado (minutos):</label>
+					<input type="text" id="tempo" value="60" /><br />
+					<label>Probabilidade de clientes (MAX):</label>
+					<input type="text" id="max-clientes" value="5" />
+					<input type="submit" value="Simular..." onclick="simular();" />
+					<input type="submit" value="Limpar" onclick="$('input[type=text]').val('');" />
+				</div>
+				<br /><br />
+				<table class="entrada">
+					<tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+					<tr>
+						<td>Chegadas &lambda;</td>
+						<td><input type="text" class="chegada-a mask" value="4.00" /></td>
+						<td><input type="text" class="chegada-b mask" value="3.33" /></td>
+						<td><input type="text" class="chegada-c mask" value="6.00"  /></td>
+					</tr>
+					<tr>
+						<td>Serviço &mu;</td>
+						<td><input type="text" class="servico-a mask" value="3.00"  /></td>
+						<td><input type="text" class="servico-b mask" value="3.00"  /></td>
+						<td><input type="text" class="servico-c mask" value="3.00"  /></td>
+					</tr>
+				</table>
+				<br />
+				<table class="resultado-1">
+					<tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+					<tr>
+						<td>Chegadas &lambda;</td>
+						<td><input type="text" class="chegada-a" /></td>
+						<td><input type="text" class="chegada-b" /></td>
+						<td><input type="text" class="chegada-c" /></td>
+					</tr>
+					<tr>
+						<td>Serviço &mu;</td>
+						<td><input type="text" class="servico-a" /></td>
+						<td><input type="text" class="servico-b" /></td>
+						<td><input type="text" class="servico-c" /></td>
+					</tr>
+				</table>
+				<br />
+				<table class="resultado-2">
+					<tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+					<tr>
+						<td>Número médio de carros no sistema: L = &lambda; / (&mu; - &lambda;) </td>
+						<td><input type="text" class="r1-a" /></td>
+						<td><input type="text" class="r1-b" /></td>
+						<td><input type="text" class="r1-c" /></td>
+					</tr>
+					<tr>
+						<td>Tempo médio despendido no sistema: W = 1 / (&mu; - &lambda;)</td>
+						<td><input type="text" class="r2-a" /></td>
+						<td><input type="text" class="r2-b" /></td>
+						<td><input type="text" class="r2-c" /></td>
+					</tr>
+					<tr>
+						<td>Taxa média de ocupação do servidor: p = &lambda; / &mu;</td>
+						<td><input type="text" class="r3-a" /></td>
+						<td><input type="text" class="r3-b" /></td>
+						<td><input type="text" class="r3-c" /></td>
+					</tr>
+				</table>
+				<br />
+				<table class="resultado-3">
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
